@@ -94,9 +94,9 @@ function SignUp() {
                 <div className="col-md-6 mb-2 w-100">
                     <div data-mdb-input-init className="form-outline">
                         
-                        <label className="form-label" htmlFor="form3Example1">UserName</label>
-                        <label className="form-label" htmlFor="form3Example1"> { dataValidation.userName ? "Enter Username" : ( isValidUserName ? "Username is unavailable" : "" ) } </label>
-                        <input type="username" id="form3Example1" className="form-control" placeholder="Enter UserName"
+                        <label className="form-label" > UserName </label>
+                        <label className="form-label text-danger ms-2" > { dataValidation.userName ? "Enter Username" : ( isValidUserName ? "Username is unavailable" : "" ) } </label>
+                        <input type="username" className="form-control" placeholder="Enter UserName"
                         name="userName" onChange={ (e) => { updateChange(e) } } required/>
                         
                     </div>
@@ -105,18 +105,18 @@ function SignUp() {
 
             <div data-mdb-input-init className="form-outline mb-2">
                 
-                <label className="form-label" htmlFor="form3Example3">Email</label>
-                <label className="form-label" htmlFor="form3Example3"> { dataValidation.email && "Enter Email" } </label>
-                <input type="email" id="form3Example3" className="form-control" placeholder="Enter your email address"
+                <label className="form-label" >Email</label>
+                <label className="form-label text-danger ms-2" > { dataValidation.email && "Enter Email" } </label>
+                <input type="email" className="form-control" placeholder="Enter your email address"
                  name="email" onChange={ (e) => { updateChange(e) } }/>
 
             </div>
 
             <div data-mdb-input-init className="form-outline mb-2">
                 
-                <label className="form-label" htmlFor="form3Example4">shopName</label>
-                <label className="form-label" htmlFor="form3Example4"> { dataValidation.shopName && "Enter Shopname" } </label>
-                <input type="name" id="form3Example4" className="form-control" placeholder="Enter your shopName"
+                <label className="form-label" >shopName</label>
+                <label className="form-label text-danger ms-2" > { dataValidation.shopName && "Enter Shopname" } </label>
+                <input type="name" className="form-control" placeholder="Enter your shopName"
                 name="shopName" onChange={ (e) => { updateChange(e) } } required/>
 
             </div>
@@ -124,20 +124,29 @@ function SignUp() {
             
             <div data-mdb-input-init className="form-outline mb-2">
                 
-                <label className="form-label" htmlFor="form3Example4">Contact</label>
-                <label className="form-label" htmlFor="form3Example4"> { dataValidation.contact && "Enter Contact Number" } </label>
-                <input type="number" id="form3Example4" className="form-control" placeholder="Enter contact number"
+                <label className="form-label" >Contact</label>
+                <label className="form-label text-danger ms-2" > { dataValidation.contact && "Enter Contact Number" } </label>
+                <input type="number" className="form-control" placeholder="Enter contact number"
                 name="contact" onChange={ (e) => { updateChange(e) } } required/>
             </div>
 
             <div data-mdb-input-init className="form-outline mb-2">
                 
-                <label className="form-label" htmlFor="form3Example4"></label>
-                <label className="form-label" htmlFor="form3Example4"> { dataValidation.password && "Enter Password" } </label>
-                <input type="password" id="form3Example4" className="form-control" 
+                <label className="form-label" > Password </label>
+                <label className="form-label text-danger ms-2" > { dataValidation.password && "Enter Password" } </label>
+                <input type="password" className="form-control" 
                 name="password" onChange={ (e) => { updateChange(e) } } placeholder="Enter password"/>
             </div>
 
+            <div data-mdb-input-init className="form-outline mb-2">
+                
+                <label className="form-label" > Confirm Password </label>
+                <label className="form-label text-danger ms-2" > { dataValidation.confiomPassword && "Enter Password" } </label>
+                <input type="password" className="form-control" 
+                name="confirmPassword" onChange={ (e) => { updateChange(e) } } placeholder="Enter password"/>
+            </div>
+
+            <label className="form-label text-danger ms-2" > { submitStatus && "Enter same Passwords " } </label>
 
             <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-block mb-4"
             onClick={submit}>
