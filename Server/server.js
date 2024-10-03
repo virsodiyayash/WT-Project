@@ -30,8 +30,8 @@ mongoose.connect('mongodb+srv://virsodiyayash4:yash%408483@cluster0.kr9wp.mongod
     });
 
 
-    app.get('/userLogin/:userName/:password' , async(req, res)=>{
-        const user = await User.findOne({userName : req.params.userName});
+    app.get('/userLogin/:email/:password' , async(req, res)=>{
+        const user = await User.findOne({email : req.params.email});
         if(user == null || user == undefined) res.send("Not Found");
         else if(user.password == req.params.password) res.send(`${user._id}`);
         else res.send("Not Found ");
